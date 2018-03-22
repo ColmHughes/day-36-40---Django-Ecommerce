@@ -2,3 +2,12 @@ body {
     font-family: Arial;
     padding-top: 80px;
 }
+.products {
+    height: 500px;
+    border-radius: 10px;
+    border: 2px black solid;
+    margin: 1% 0px 1% 0px;
+}
+.product_heading {
+    color:red;
+}
