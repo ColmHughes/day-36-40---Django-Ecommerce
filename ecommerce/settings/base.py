@@ -121,11 +121,19 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET_KEY')
+
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'accounts.backends.EmailAuth'

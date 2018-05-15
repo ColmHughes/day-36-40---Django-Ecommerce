@@ -32,7 +32,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, "You have sucessfully logged out")
-    return redirect('home')
+    return redirect(request.GET.get('next', 'home'))
     
 @login_required()
 def profile(request):

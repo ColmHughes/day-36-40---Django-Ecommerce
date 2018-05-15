@@ -19,6 +19,7 @@ from home.views import show_home
 from accounts import urls as account_urls
 from products import urls as product_urls
 from products.views import product_list
+from products.views import search_products
 from cart import urls as cart_urls
 from reviews import urls as urls_reviews
 from checkout import urls as checkout_urls
@@ -28,10 +29,11 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', product_list, name='product_list'),
+    url(r'^search', search_products, name='search'),
     url(r'^accounts/', include(account_urls)),
     url(r'^products/', include(product_urls)),
     url(r'^cart/', include(cart_urls)),
     url(r'^reviews/', include(urls_reviews)),
-    # url(r'^checkout/', include(checkout_urls)),
+    url(r'^checkout/', include(checkout_urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
 ]
